@@ -1,0 +1,23 @@
+1. 도커이미지가 있어야한다 pgvector/pgvector:pg15
+
+
+ 없으면 
+ 2.
+   docker run -d \
+  --name pgvector-5433 \
+  -p 5433:5432 \
+  -e POSTGRES_DB=mydatabase \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=postgres \
+  pgvector/pgvector:pg15
+
+3. pgvector 확장자 설치
+도커접속
+docker exec -it pgvector-5433 psql -U postgres -d mydatabase
+CREATE EXTENSION vector;
+\dx
+
+1번 실행하고 안되면
+ALTER TABLE military_images
+ADD COLUMN image_embedding VECTOR(512); <- 테이블에 이게없어서 그럴수도있음
+

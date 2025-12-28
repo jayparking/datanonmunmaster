@@ -1,0 +1,28 @@
+# LLM & API Clients
+openai>=1.0.0
+
+# Data Validation & Schema
+pydantic>=2.0.0
+
+# Environment Variables
+python-dotenv
+
+# Web Scraping & HTTP Requests (for collect_arxiv.py)
+requests
+beautifulsoup4
+lxml
+SPARQLWrapper
+
+# image embeddings 
+open_clip_torch 
+torch 
+torchvision
+
+# image mine
+icrawler
+
+# anotation
+transformers 
+segment-anything 
+opencv-python 
+pycocotools
